@@ -1,20 +1,22 @@
 version: "3.8"
 
 services:
-  oracle:
+  oracledb:
+    container_name: oracledb
     image: truevoly/oracle-12c
     restart: unless-stopped
     env_file: ./.env
     ports:
       - $DB_LOCAL_PORT:$DB_DOCKER_PORT
-      - 8050:8080
+      - 8060:8080
     volumes:
       - db:/u01/app/oracle
   app:
     depends_on:
-      - oracle
+      - oracledb
+    container_name: app
     build: ./server
-    restart: on-failure
+    # restart: on-failure
     env_file: ./.env
     ports:
       - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
