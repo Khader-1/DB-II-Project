@@ -10,5 +10,10 @@ public class DefaultController {
     public String defaultPage() {
         return "redirect:/students/";
     }
+
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login";
+    }
     
 }
