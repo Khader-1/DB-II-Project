@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import db.app.demo.models.Student;
+import db.app.demo.models.Course;
+import db.app.demo.service.CourseService;
 import db.app.demo.service.DepartmentService;
-import db.app.demo.service.StudentService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,11 +21,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@RequestMapping("/students")
-public class StudentController {
+@RequestMapping("/courses")
+public class CourseController {
 
     @Autowired
-    public StudentService studnetsService;
+    public CourseService coursesService;
 
     @Autowired
     public DepartmentService departmentsService;
@@ -33,44 +33,44 @@ public class StudentController {
     @GetMapping("/")
     @Transactional
     public String index(Model model) {
-        model.addAttribute("students", studnetsService.getAll());
-        return "student/index";   
+        model.addAttribute("courses", coursesService.getAll());
+        return "course/index";   
     }
 
     @GetMapping("/create")
     @Transactional
     public String create(Model model) {
         model.addAttribute("departments", departmentsService.getAllNames());
-        return "student/create";   
+        return "course/create";   
     }
 
     @PostMapping("/")
     @Transactional
-    public String create(Student student) {
-        studnetsService.create(student);
-        return "redirect:/students/";   
+    public String create(Course course) {
+        coursesService.create(course);
+        return "redirect:/courses/";   
     }
 
     @GetMapping("/edit/{id}")
     @Transactional
     public String edit(Model model, @PathVariable("id") String id) {
-        model.addAttribute("student", studnetsService.getById(id));
+        model.addAttribute("course", coursesService.getById(id));
         model.addAttribute("departments", departmentsService.getAllNames());
-        return "student/edit";   
+        return "course/edit";   
     }
 
     @PostMapping("/{id}")
     @Transactional
-    public String update(Student student) {
-        studnetsService.update(student);
-        return "redirect:/students/";   
+    public String update(Course course) {
+        coursesService.update(course);
+        return "redirect:/courses/";   
     }
 
     @GetMapping("delete/{id}")
     @Transactional
     public String delete(@PathVariable("id") String id) {
-        studnetsService.delete(id);
-        return "redirect:/students/";   
+        coursesService.delete(id);
+        return "redirect:/courses/";   
     }
     
 }
