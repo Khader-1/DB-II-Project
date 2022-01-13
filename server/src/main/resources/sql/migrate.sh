@@ -1,0 +1,1 @@
+sqlplus -s system/oracle@localhost:1521/xe <<< "@/home/oracle/scripts/execute_all.sql;"

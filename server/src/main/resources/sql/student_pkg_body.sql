@@ -90,7 +90,6 @@ from
     takes t
 WHERE
     t.id = s_id;
-
 END;
 
 PROCEDURE delete_student (s_id IN student.id % TYPE) IS BEGIN
@@ -98,7 +97,6 @@ DELETE FROM
     student
 WHERE
     id = s_id;
-
 END;
 
 PROCEDURE get_student_by_id (
@@ -111,7 +109,7 @@ FROM
     student
 WHERE
     id = s_id;
-
 END;
 
 END;
+/

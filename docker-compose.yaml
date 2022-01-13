@@ -9,6 +9,7 @@ services:
       - 8060:8080
     volumes:
       - ./db:/u01/app/oracle
+      - ./server/src/main/resources/sql/:/home/oracle/scripts
   app:
     depends_on:
       - oracledb

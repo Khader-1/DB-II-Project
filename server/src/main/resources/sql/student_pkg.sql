@@ -36,3 +36,4 @@ PROCEDURE get_student_by_id (
 );
 
 END;
+/

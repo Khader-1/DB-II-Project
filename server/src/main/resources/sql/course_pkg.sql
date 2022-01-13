@@ -42,3 +42,4 @@ PROCEDURE delete_course (
 );
 
 END;
+/
