@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import db.app.demo.models.EnrolledCourse;
 import db.app.demo.models.Student;
 import db.app.demo.repository.StudentRepository;
 import lombok.AllArgsConstructor;
@@ -47,6 +48,10 @@ public class StudentService {
 
     public void create(Student student) {
         studnetsRepo.register(student.getID(), student.getName(), student.getDepartmentName(), student.getTotalCerdit());
+    }
+
+    public List<EnrolledCourse> getEnrolledCourses(String id) {
+        return studnetsRepo.getStudentCourses(id);
     }
     
 }

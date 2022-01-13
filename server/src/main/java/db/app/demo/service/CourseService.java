@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import db.app.demo.models.Course;
+import db.app.demo.models.EnrolledCourse;
 import db.app.demo.repository.CourseRepository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -46,5 +47,9 @@ public class CourseService {
 
     public void delete(String id) {
         courseRepository.deleteCourse(id);
+    }
+
+    public List<EnrolledCourse> getEnrolledCourses(String id) {
+        return courseRepository.getCourseTakes(id);
     }
 }

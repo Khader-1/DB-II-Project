@@ -31,10 +31,10 @@
                   <tbody>
                     <tr th:each="course : ${courses}">
                       <td>
-                        <a href="basic_table.html#" th:text="${course.ID}">ID</a>
+                        <a th:href="'/courses/' + ${course.ID}" th:text="${course.ID}">ID</a>
                       </td>
                       <td>
-                        <a href="basic_table.html#" th:text="${course.title}">Name</a>
+                        <a th:href="'/courses/' + ${course.ID}" th:text="${course.title}">Name</a>
                       </td>
                       <td class="hidden-phone" th:text="${course.departmentName}">Department</td>
                       <td class="hidden-phone" th:text="${course.credits}">credit</td>

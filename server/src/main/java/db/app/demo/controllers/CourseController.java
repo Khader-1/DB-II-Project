@@ -66,6 +66,14 @@ public class CourseController {
         return "redirect:/courses/";   
     }
 
+    @GetMapping("/{id}")
+    @Transactional
+    public String show(Model model, @PathVariable String id) {
+        model.addAttribute("courses", coursesService.getEnrolledCourses(id));
+        model.addAttribute("c", coursesService.getById(id));
+        return "course/show";   
+    }
+
     @GetMapping("delete/{id}")
     @Transactional
     public String delete(@PathVariable("id") String id) {

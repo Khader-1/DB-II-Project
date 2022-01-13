@@ -66,6 +66,14 @@ public class StudentController {
         return "redirect:/students/";   
     }
 
+    @GetMapping("/{id}")
+    @Transactional
+    public String show(Model model, @PathVariable String id) {
+        model.addAttribute("courses", studnetsService.getEnrolledCourses(id));
+        model.addAttribute("student", studnetsService.getById(id));
+        return "student/show";   
+    }
+
     @GetMapping("delete/{id}")
     @Transactional
     public String delete(@PathVariable("id") String id) {
