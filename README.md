@@ -22,4 +22,4 @@ docker-compose up
 
 ## ERD
 
-!["ERD"]("university_db_schema.png")
+!["ERD"](university_db_schema.png)
