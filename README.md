@@ -30,5 +30,26 @@ Create an application for University registration system, Using PL/SQL, the diff
 
 ### Notes:
 
-1. Find Attach Project Schema (university.sq) Feel free to use any programing language to build application (Java , php , asp ..)
+1. Find Attach Project Schema (university.sql) Feel free to use any programing language to build application (Java , php , asp ..)
 1. All Project Requirement must be as Stored in DB (Procedure, Functions...).
+
+### How to use universitySchema.sql ?
+
+1. Connect as sys as sysdba using SqlPlus
+1. Create user as following:
+
+```
+        CREATE USER your_name
+    	IDENTIFIED BY your_password
+    	DEFAULT TABLESPACE USERS
+    	QUOTA 10M ON USERS;
+
+
+    	GRANT CREATE SESSION, RESOURCE, CREATE VIEW,
+    	CREATE SYNONYM, CREATE MATERIALIZED VIEW, ALTER SESSION
+    	TO your_name;
+
+```
+
+3. Create new connection to new user in sql developer
+4. Copy all Schema sql and Run all script
