@@ -26,5 +26,9 @@ docker-compose up
 
 ### Project Description:
 
-Create an application for University registration system, Using PL/SQL, the different data of students is manipulated as per different requirement. The data is allowed to be added and
-deleted from the tables.
+Create an application for University registration system, Using PL/SQL, the different data of students is manipulated as per different requirement. The data is allowed to be added and deleted from the tables.
+
+### Notes:
+
+1. Find Attach Project Schema (university.sq) Feel free to use any programing language to build application (Java , php , asp ..)
+1. All Project Requirement must be as Stored in DB (Procedure, Functions...).
