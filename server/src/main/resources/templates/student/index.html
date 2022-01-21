@@ -109,19 +109,24 @@
                   <hr>
                   <thead>
                     <tr>
-                      <th><i class="fa fa-bullhorn"></i> Name</th>
-                      <th class="hidden-phone"><i class="fa fa-question-circle"></i> Department</th>
+                      <th># Id</th>
+                      <th>Name</th>
+                      <th class="hidden-phone">Department</th>
+                      <th class="hidden-phone">Total Credit</th>
                       <th></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr th:each="student : ${students}">
                       <td>
+                        <a href="basic_table.html#" th:text="${student.ID}">ID</a>
+                      </td>
+                      <td>
                         <a href="basic_table.html#" th:text="${student.name}">Name</a>
                       </td>
                       <td class="hidden-phone" th:text="${student.departmentName}">Department</td>
+                      <td class="hidden-phone" th:text="${student.totalCerdit}">credit</td>
                       <td>
-                        <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
                         <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                       </td>
@@ -144,7 +149,7 @@
     <footer class="site-footer">
       <div class="text-center">
         <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
+          &copy; Copyrights <strong>Khaders</strong>. All Rights Reserved
         </p>
         <div class="credits">
           <!--
@@ -153,7 +158,7 @@
             Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
             Licensing information: https://templatemag.com/license/
           -->
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+          Created with Dashio template
         </div>
         <a href="basic_table.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
