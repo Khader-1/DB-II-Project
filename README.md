@@ -22,4 +22,10 @@ docker-compose up
 
 ## ERD
 
-!["ERD"](university_db_schema.png)
+## !["ERD"](university_db_schema.png)
+
+### Project Description:
+
+Create an application University registration system, Using PL/SQL, the different data of
+students is manipulated as per different requirement. The data is allowed to be added and
+deleted from the tables.
